@@ -1,0 +1,26 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: ms-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
+jwt:
+  config:
+    key: lhkdsg
+    ttl: 3600000
+zuul:
+  routes:
+    ms-base:
+      path: /base/**
+      serviceId: ms-base
+    ms-user:
+      path: /user/**
+      serviceId: ms-user
+    ms-qa:
+      path: /qa/**
+      serviceId: ms-qa

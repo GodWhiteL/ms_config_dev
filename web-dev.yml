@@ -1,0 +1,22 @@
+server:
+  port: 9014
+spring:
+  application:
+    name: ms-web
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    ms-base:
+      path: /base/**
+      serviceId: ms-base
+    ms-user:
+      path: /user/**
+      serviceId: ms-user
+    ms-qa:
+      path: /qa/**
+      serviceId: ms-qa
