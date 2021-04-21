@@ -1,0 +1,27 @@
+server: 
+  port: 9008
+spring: 
+  application:  
+    name: ms-user #指定服务名
+  datasource:  
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.190.128:3306/tensquare_user?useUnicode=true&amp;characterEncoding=UTF8
+    username: root
+    password: lhk@199799
+  jpa: 
+    database: MySQL
+    show-sql: true
+  redis:
+    host: 192.168.190.128
+  rabbitmq:
+    host: 192.168.190.128
+jwt:
+  config:
+    key: lhkdsg
+    ttl: 3600000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
