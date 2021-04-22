@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: ms-base
+  rabbitmq:
+    host: 192.168.190.128
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.190.128:3306/tensquare_base?serverTimezone=UTC
